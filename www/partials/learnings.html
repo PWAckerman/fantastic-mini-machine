@@ -1,0 +1,47 @@
+<ion-view>
+<ion-content>
+<div style="background-color: background: linear-gradient(to bottom, #175377 0%,#38757a 100%);">
+  <div class="row">
+    <div class="container">
+      <h1 class="white-t" style="font-weight: 100">LEARNINGS</h1>
+    </div>
+  </div>
+  <div class="row learnings-master fadeinload">
+    <div class="container">
+      <div ng-repeat="learning in learnings" class="learnings-container">
+        <img ng-src="{{learning.skill.icon}}" class="learnings-icon fadeinload" ng-click="selectLearning(learning)"/>
+        <div class="progress-bar"><div class="progress-filled-in" style="width: {{learning.progress}}%; transition: .5s;"></div></div>
+      </div>
+      <div class="learnings-container" style="background: none;">
+        <div class="learnings-icon fadeinload" ng-click="openModal()"><i class="icon ion-ios-plus-outline plus"></i></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="selected-learning white-t fadeinload">
+        <img ng-src="{{selectedLearning.skill.icon}}" class="learnings-icon fadeinload" style="float: left; margin-left: 20px; margin-bottom: 10px;"/>
+        <div class="fadeinload" style="font-size: 25px; text-align: left; margin-left: 80px;">{{selectedLearning.skill.name}}</div>
+        <div class="fadeinload" style="font-size: 18px; text-align: left; margin-left: 80px;">{{selectedLearning.skill.type}}</div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row" style="background: rgba(0, 0, 0, 0.53);">
+    <div class="container">
+    <div class="item range" style="background: none; border: none; width: 60%; display: inline-block; margin-left: -30px; margin-top: 10px;">
+      <input type="range" style="transition: .5s; display: inline-block; margin-bottom: -10px;" name="progress" min="0" max="100" ng-model="selectedLearning.progress"></input>
+    </div>
+    <div style="background: none; border: none; display: inline-block; float: right; margin-top: 20px; height: 60px;"><i class="icon ion-ios-upload-outline icon-button positive" ng-click="upgradeLearning(selectedLearning)"></i></div>
+    <div style="background: none; border: none; display: inline-block; float: right; margin-top: 20px; height: 60px;" ng-click="removeLearning(selectedLearning._id)"><i class="icon ion-trash-a icon-button negative"></i></div>
+    <button class="entry-submit" style="width: 100%;" ng-click="updateProgress(selectedLearning)">U P D A T E&nbsp;&nbsp;P R O G R E S S</button>
+  </div>
+  </div>
+  <div class="row">
+    <div class="container">
+
+    </div>
+  </div>
+</div>
+</ion-content>
+</ion-view>

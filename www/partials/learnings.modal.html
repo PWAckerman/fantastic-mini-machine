@@ -1,0 +1,22 @@
+<ion-modal-view style="background: linear-gradient(to bottom, #175377 0%,#38757a 100%);">
+  <ion-header-bar style="background: #175377;">
+    <i class="icon ion-ios-close-outline modal-icon" ng-click="closeModal()"></i>
+    <h1 class="title white-t" style="font-weight: 100; font-size: 30px;">ADD LEARNING</h1>
+  </ion-header-bar>
+  <ion-content style="background: linear-gradient(to bottom, #175377 0%,#38757a 100%);">
+    <div class="row">
+      <div class="container">
+        <div ng-repeat="skill in skills" class="white-t skill-box" ng-click="addLearning(skill._id)">
+          <img ng-src="{{skill.icon}}" style="width: auto; height: 50px; position: absolute; left: 20px; top: 20px;"/>
+          <div style="font-size: 25px; position: absolute; left: 80px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 200px;">{{skill.name}}</div>
+          <div style="font-size: 15px; position: absolute; left: 80px; top: 40px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 200px;">{{skill.type}}</div>
+        </div>
+        <div class="white-t skill-box" ng-click="openModal2()">
+          <div style="width: auto; height: 50px; position: absolute; left: 20px;" class="icon ion-ios-plus-outline plus"></div>
+          <div style="font-size: 25px; position: absolute; left: 80px; top: 30px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 200px;">ADD NEW SKILL</div>
+          <div style="font-size: 15px; position: absolute; left: 80px; top: 50px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 200px;">Add to the skill library...</div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

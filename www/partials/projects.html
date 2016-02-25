@@ -1,0 +1,49 @@
+<ion-view>
+<ion-content>
+<div style="background-color: background: linear-gradient(to bottom, #175377 0%,#38757a 100%);">
+  <div class="row">
+    <div class="container">
+      <h1 class="white-t" style="font-weight: 100">PROJECTS</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <input ng-model="newProject.title" class="textbox white-t" placeholder="Project Title..." style="height: 30px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; border-bottom: 1px solid rgba(255, 255, 255, 0.64); font-size: 20px; padding: 20px;"></input>
+      <textarea ng-model="newProject.description" placeholder="Type New Project Description Here..." class="textbox white-t" style="border-radius: 0px; border-bottom: 1px solid rgba(255, 255, 255, 0.64);"></textarea>
+      <input ng-model="newProject.screenshot" class="textbox white-t" placeholder="Screenshot URL..." style="height: 30px; border-top-left-radius: 0px; border-top-right-radius: 0px; font-size: 15px; padding: 15px; margin-bottom: 20px;"></input>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <h3 class="white-t" style="font-weight: 100">PLATFORM</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div style="font-size: 45px;">
+        <div class="icon {{platform.icon}} platform" ng-repeat="platform in platforms" ng-class="{ platformActive: platform.isActive }" ng-click="selectPlatform(platform)">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <h3 class="white-t" style="font-weight: 100; margin-top: 20px;">TECHS</h3>
+    </div>
+  </div>
+  <div class="row learnings-master fadeinload">
+    <div class="container">
+      <div ng-repeat="tech in techs" class="learnings-container" ng-class="{ techActive: tech.isActive }" ng-click="selectTech(tech)">
+        <img ng-src="{{tech.icon}}" class="learnings-icon fadeinload"/>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <button class="entry-submit" ng-click="submitProject()" style="width: 100%; margin-top: 20px; margin-bottom: 100px;" ng-disabled="!newProject.title">S U B M I T&nbsp;&nbsp;P R O J E C T</button>
+    </div>
+  </div>
+</div>
+</ion-content>
+</ion-view>
